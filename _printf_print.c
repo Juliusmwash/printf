@@ -1,4 +1,4 @@
-#include "my_printf.h"
+#include "main.h"
 
 /**
  * parser - Receives the main string and all the necessary parameters to
