@@ -40,6 +40,7 @@ int print_address(va_list list);
 int print_hex3(long int num);
 
 /*Helper functions*/
+int hex_check(int, char);
 unsigned int base_len(unsigned int, int);
 char *rev_string(char *);
 void write_base(char *str);
