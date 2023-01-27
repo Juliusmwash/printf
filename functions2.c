@@ -54,15 +54,15 @@ int print_string2(va_list list)
 			_write_char('\\');
 			_write_char('x');
 			_write_char('0');
-			print_heX2(c);
-			len += 4;
+			len += print_heX2(c);
+			len += 3;
 		}
 		else
 		{
 			_write_char('\\');
 			_write_char('x');
-			print_heX2(c);
-			len += 3;
+			len += print_heX2(c);
+			len += 2;
 		}
 		}
 		else
