@@ -23,6 +23,7 @@ int _printf(const char *format, ...)
 		{"x", print_hex},
 		{"X", print_heX},
 		{"S", print_string2},
+		{"p", print_address},
 		{NULL, NULL}
 	};
 	va_list arg_list;
