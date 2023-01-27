@@ -28,11 +28,6 @@ int print_string(va_list list)
 	return (i);
 }
 
-/**
- * print_string2 - prints characters to stdout
- * @list: list of arguments
- * Return: amount of characters printed
- */
 int print_string2(va_list list)
 {
 	int i;
