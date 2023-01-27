@@ -33,7 +33,7 @@ int print_string(va_list list)
  * @list: list of arguments
  * Return: amount of characters printed
  */
-/*
+
 int print_string2(va_list list)
 {
 	int i;
@@ -64,12 +64,12 @@ int print_string2(va_list list)
 		}
 		else
 		{
-			_write_char(s[i]);
+			_write_char(str[i]);
 		}
 	}
 	return (i);
 }
-*/
+
 /**
  * print_percent - Prints a percent symbol
  * @list: list of arguments
