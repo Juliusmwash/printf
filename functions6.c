@@ -56,12 +56,12 @@ int print_address(va_list list)
 	long int p;
 	int len;
 
-	len = 0;
+	/*len = 0;
 	_write_char('0');
-	_write_char('x');
+	_write_char('x');*/
 	p = va_arg(list, long int);
 	len += 2;
-	len = print_hex3(p);
+	len += print_hex3(p);
 	return (len);
 }
 
