@@ -8,6 +8,8 @@ int print_heX2(unsigned int);
 int _printf(const char *format, ...);
 int _write_char(char);
 int print_char(va_list);
+int print_address(va_list list);
+int print_hex3(long int);
 int print_string(va_list);
 int print_string2(va_list);
 int print_percent(va_list);
@@ -53,6 +55,7 @@ int _printf(const char *format, ...)
 	int printed_chars;
 	struct convert f_list[] = {
 		{"S", print_string2},
+		{"p", print_address},
 		{NULL, NULL}
 	};
 	va_list arg_list;
@@ -145,6 +148,66 @@ int hex_check(int num, char x)
 int _write_char(char c)
 {
 	return (write(1, &c, 1));
+}
+
+/**
+ * print_address - prints address of a given pointer or variable
+ * @list: list of arguments
+ * Return: count of printed characters
+ */
+
+int print_address(va_list list)
+{
+	long int p;
+	int len;
+
+	_write_char('0');
+	_write_char('x');
+	p = va_arg(list, long int);
+	len = print_hex3(p);
+	len += 2;
+	return (len);
+}
+
+/**
+ * print_hex3 - prints hexadecimal in small letters
+ * @num: number to find hex
+ * Return: count of chars printed
+ */
+
+int print_hex3(long int num)
+{
+	int len;
+	int rem_num;
+	char *hex_rep;
+	char *rev_hex;
+
+	if (num < 1)
+		return (-1);
+	len = base_len(num, 16);
+	hex_rep = malloc(sizeof(char) * len + 1);
+	if (hex_rep == NULL)
+		return (-1);
+	for (len = 0; num > 0; len++)
+	{
+		rem_num = num % 16;
+		if (rem_num > 9)
+		{
+			rem_num = hex_check(rem_num, 'x');
+			hex_rep[len] = rem_num;
+		}
+		else
+			hex_rep[len] = rem_num + 48;
+		num = num / 16;
+	}
+	hex_rep[len] = '\0';
+	rev_hex = rev_string(hex_rep);
+	if (rev_hex == NULL)
+		return (-1);
+	write_base(rev_hex);
+	free(hex_rep);
+	free(rev_hex);
+	return (len);
 }
 
 int print_heX2(unsigned int num)
@@ -350,7 +413,7 @@ int main() {
     printy("Could you print some non-prntable characters?\n%S\nThanks!\n", "Sure:\x1F\x7F\n");
     return (0);
 }
-*/
+
 int main(void)
 {
 	int len, len2;
@@ -370,6 +433,23 @@ int main(void)
 	//len2 = _printf("Could you print some non-prntable characters?\nff\nThanks!\n", "Sure:\x1F\x7F\n");
 	printf("len: %d\n", len);
 	printf("len2: %d\n", len2);
+	if (len != len2)
+	{
+		printf("Lengths differ.\n");
+		fflush(stdout);
+		return (1);
+	}
+	return (0);
+}*/
+
+int main(void)
+{
+	int len, len2;
+	void *p = (void *)0x7fff5100b608;
+
+	len = _printf("%p\n", p);
+	len2 = printf("%p\n", p);
+	fflush(stdout);
 	if (len != len2)
 	{
 		printf("Lengths differ.\n");
