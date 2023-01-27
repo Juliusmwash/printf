@@ -28,17 +28,15 @@ int print_string(va_list list)
 	return (i);
 }
 
-/**
+/*
  * print_string2 - prints characters to stdout
  * @list: list of arguments
  * Return: count of characters printed
- */
+ *
 
 int print_string2(va_list list)
 {
-	int i;
-	int len;
-	int c;
+	int i, len, c;
 	char *str;
 
 	len = 0;
@@ -74,7 +72,7 @@ int print_string2(va_list list)
 	}
 	return (len);;
 }
-
+*/
 /**
  * print_percent - Prints a percent symbol
  * @list: list of arguments
