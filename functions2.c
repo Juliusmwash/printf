@@ -70,7 +70,7 @@ int print_string2(va_list list)
 			len++;
 		}
 	}
-	return (len);;
+	return (len);
 }
 
 /**
