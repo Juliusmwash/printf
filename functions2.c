@@ -50,11 +50,17 @@ int print_string2(va_list list)
 		c = str[i];
 		if (c < 16)
 		{
+			_write_char('\\');
+			_write_char('x');
 			_write_char('0');
 			print_heX2(c);
 		}
 		else
+		{
+			_write_char('\\');
+			_write_char('x');
 			print_heX2(c);
+		}
 		}
 		else
 		{
