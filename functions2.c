@@ -30,7 +30,7 @@ int print_string(va_list list)
 
 /**
  * print_string2 - prints string and other ascii ...
- * @s: string to print
+ * @list: list of arguments
  * Return: amount of characters printed
  */
 
