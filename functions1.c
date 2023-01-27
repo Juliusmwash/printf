@@ -175,7 +175,7 @@ int print_heX(va_list list)
 
 /**
  * print_heX2 - Prints a representation of a decimal number on base16 Uppercase
- * @list: List of the arguments passed to the function
+ * @num: number to find hex
  * Return: Number of characters printed
  */
 int print_heX2(unsigned int num)
