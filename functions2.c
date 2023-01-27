@@ -33,7 +33,7 @@ int print_string(va_list list)
  * @list: list of arguments
  * Return: amount of characters printed
  */
-
+/*
 int print_string2(va_list list)
 {
 	int i;
@@ -69,7 +69,7 @@ int print_string2(va_list list)
 	}
 	return (i);
 }
-
+*/
 /**
  * print_percent - Prints a percent symbol
  * @list: list of arguments
