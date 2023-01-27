@@ -29,6 +29,42 @@ int print_string(va_list list)
 }
 
 /**
+ * print_string2 - prints string and other ascii ...
+ * @s: string to print
+ * Return: amount of characters printed
+ */
+
+int print_string2(va_list list)
+{
+	int i;
+	int c;
+	char *str;
+
+	str = va_arg(list, char *);
+	if (str == NULL)
+		str = "(null)";
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		if (c > 0 && c < 32 || c >= 127)
+		{
+		c = str[i];
+		if (c < 16)
+		{
+			_write_char('0');
+			print_heX2(c);
+		}
+		else
+			print_heX2(c);
+		}
+		else
+		{
+			_write_char(s[i]);
+		}
+	}
+	return (i);
+}
+
+/**
  * print_percent - Prints a percent symbol
  * @list: list of arguments
  * Return: Will return the amount of characters printed.

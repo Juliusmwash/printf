@@ -19,11 +19,13 @@ struct convert
 typedef struct convert conver_t;
 
 /*Main functions*/
+int print_heX2(unsigned int);
 int parser(const char *format, conver_t f_list[], va_list arg_list);
 int _printf(const char *format, ...);
 int _write_char(char);
 int print_char(va_list);
 int print_string(va_list);
+int print_string2(va_list);
 int print_percent(va_list);
 int print_integer(va_list);
 int print_number(va_list);
