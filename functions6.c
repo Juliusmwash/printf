@@ -50,7 +50,7 @@ int print_string2(va_list list)
  * @list: list of arguments
  * Return: count of printed characters
  */
-
+/*
 int print_address(va_list list)
 {
 	long int p;
@@ -84,7 +84,7 @@ int print_address(va_list list)
 	}
 	return (len);
 }
-
+*/
 /**
  * print_hex3 - prints hexadecimal in small letters
  * @num: number to find hex
