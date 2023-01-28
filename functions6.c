@@ -54,7 +54,7 @@ int print_string2(va_list list)
 int print_address(va_list list)
 {
 	long int p;
-	int len;
+	int len, i;
 
 	len = 0;
 	p = va_arg(list, long int);
