@@ -57,11 +57,31 @@ int print_address(va_list list)
 	int len;
 
 	len = 0;
-	_write_char('0');
-	_write_char('x');
 	p = va_arg(list, long int);
-	len += 2;
-	len += print_hex3(p);
+	if (p = 0)
+	{
+		_write_char('(');
+		_write_char('n');
+		_write_char('i');
+		_write_char('l');
+		_write_char(')');
+		len += 5;
+	}
+	else if (p < 0)
+	{
+		_write_char('0');
+		_write_char('x');
+		for (i = 0; i < 16; i++)
+			_write_char('f');
+		len += 18;
+	}
+	else
+	{
+		_write_char('0');
+		_write_char('x');
+		len += 2;
+		len += print_hex3(p);
+	}
 	return (len);
 }
 
