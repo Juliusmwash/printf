@@ -18,12 +18,12 @@ int printfFlags(int *i, const char *format, conver_t f_list[], va_list arg_list)
 	{
 		if (format[j + 2] == 'x' && format[j + 3] == 'd')
 		{
-			count += write_base("0x");
+			count += _putchars("0x");
 			count += f_list[10].f(arg_list);
 		}
 		else if (format[j + 2] == 'X' && format[j + 3] == 'd')
 		{
-			count += write_base("0X");
+			count += _putchars("0X");
 			count += f_list[11].f(arg_list);
 		}
 		else if (format[j + 2] == 'o' && format[j + 3] == 'd')
