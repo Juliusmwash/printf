@@ -21,6 +21,8 @@ typedef struct convert conver_t;
 /*Main functions*/
 int print_heX2(unsigned int);
 int parser(const char *format, conver_t f_list[], va_list arg_list);
+int printfFlags(int *i, const char *format, conver_t f_list[], va_list arg_list);
+int parser_helper(int *i1, const char *format, conver_t f_list[], va_list arg_list);
 int _printf(const char *format, ...);
 int _write_char(char);
 int print_char(va_list);
