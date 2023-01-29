@@ -25,6 +25,7 @@ int printfFlags(int *i, const char *format, conver_t f_list[], va_list arg_list)
 int parser_helper(int *i1, const char *format, conver_t f_list[], va_list arg_list);
 int _printf(const char *format, ...);
 int _write_char(char);
+int _putchars(char *s);
 int print_char(va_list);
 int print_string(va_list);
 int print_string2(va_list);

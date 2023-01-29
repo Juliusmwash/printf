@@ -44,6 +44,21 @@ void write_base(char *str)
 }
 
 /**
+ * _putchars - prints characters to stdout
+ * @s: string to output
+ * Return: characters printed
+ */
+
+int _putchars(char *s)
+{
+	int i;
+
+	for (i = 0;s[i] != '\0'; i++)
+		_write_char(s[i]);
+	return (i);
+}
+
+/**
  * base_len - Calculates the length for an octal number
  * @num: The number for which the length is being calculated
  * @base: Base to be calculated by
