@@ -1,6 +1,48 @@
 #include "main.h"
 
 /**
+ * printfFlags - executes according to a flag if any
+ * @i: iteration variable
+ * @format: string being formated
+ * @f_list: list of all possible functions
+ * @arg_list: list of arguments passed to the program
+ * Return: count of the characters printed
+ */
+int printfFlags(int *i, const char *format, conver_t f_list[], va_list arg_list)
+{
+	int j, count;
+
+	count = 0;
+	j = *(i);
+	if(format[j] == '%' && format[j + 1] == '#')
+	{
+		if (format[j + 2] == 'x' && format[j + 3] == 'd')
+		{
+			_write_char('0');
+			_write_char('x');
+			count += 2;
+			count += f_list[10].f(arg_list);
+		}
+		else if (format[j + 2] == 'X' && format[j + 3] == 'd')
+		{
+			_write_char('0');
+			_write_char('X');
+			count += 2;
+			count += f_list[11].f(arg_list);
+		}
+		else if (format[j + 2] == 'o' && format[j + 3] == 'd')
+		{
+			_write_char('0');
+			count += 1;
+			count += f_list[9].f(arg_list);
+		}
+		(*(i)) += 3;
+	}
+	return (count);
+}
+
+
+/**
  * parser - Receives the main string and all the necessary parameters to
  * print a formated string.
  * @format: A string containing all the desired characters.
